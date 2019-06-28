@@ -27,6 +27,7 @@ public class GameDaoImpl implements GameDao {
         try (Connection con = CONNECTOR.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setInt(1, WHITE_TURN);
+            pstmt.executeUpdate();
 
             try (ResultSet rs = pstmt.getGeneratedKeys()) {
                 rs.next();

@@ -15,7 +15,7 @@ public abstract class Direction {
         this.COLUMN_DISTANCE_TO_MOVE = COLUMN_DISTANCE_TO_MOVE;
     }
 
-    Position simulateUnitMove(Board board, Position position, boolean isReverseDirection) {
+    public Position simulateUnitMove(Board board, Position position, boolean isReverseDirection) {
         int multipleFactor = FORWARD_FACTOR;
 
         if (isReverseDirection) {
@@ -27,5 +27,5 @@ public abstract class Direction {
         return newPosition;
     }
 
-    abstract int matchMoveCount(int rowDifference, int columnDifference);
+    public abstract int matchMoveCount(int rowDifference, int columnDifference);
 }
